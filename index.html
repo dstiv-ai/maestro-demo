@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A fictional interactive classroom demo. Build a short science lesson, watch invented learner responses take shape, and review suggested marks before anything is kept.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'none'; form-action 'none'; base-uri 'none'; object-src 'none';">
+  <title>Maestro — Live lesson studio</title>
+  <link rel="icon" href="favicon.8a031a9f74e0.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="demo.39df61dd0ae3.css">
+  <script src="demo.33cbdd1c0307.js" defer></script>
+</head>
+<body class="app">
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Studio">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" width="32" height="32">
+            <rect width="32" height="32" rx="8" fill="#4F67F0"/>
+            <path d="M8 22.5V9.5h3.1l4.9 8.2 4.9-8.2H24v13h-2.7v-8.1L17 21.2h-2l-4.3-6.8v6.8H8z" fill="#fff"/>
+          </svg>
+        </span>
+        <span class="brand-text">
+          <span class="brand-name">Maestro</span>
+          <span class="brand-sub">Live lesson studio</span>
+        </span>
+      </div>
+      <nav class="side-nav" aria-label="Views">
+        <button type="button" class="nav-btn" data-view="overview" aria-current="page">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10.5 12 4l8 6.5V20a1 1 0 0 1-1 1h-5v-6H10v6H5a1 1 0 0 1-1-1v-9.5z"/></svg>
+          Overview
+        </button>
+        <button type="button" class="nav-btn" data-view="deck">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4h9a2 2 0 0 1 2 2v14l-6.5-3L4 20V6a2 2 0 0 1 2-2z"/></svg>
+          Lesson deck
+        </button>
+        <button type="button" class="nav-btn" data-view="grid">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h7v7H4V4zm9 0h7v7h-7V4zM4 13h7v7H4v-7zm9 0h7v7h-7v-7z"/></svg>
+          Thinking grid
+        </button>
+        <button type="button" class="nav-btn" data-view="projector">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18v11H3V5zm6 13h6v2H9v-2z"/></svg>
+          Projector
+        </button>
+      </nav>
+      <button type="button" class="nav-btn about-btn" id="about-button">About this demo</button>
+    </aside>
+
+    <div class="workspace">
+      <header class="topbar">
+        <h2 id="view-title">Overview</h2>
+        <span class="badge badge-indigo">Fictional class · Simulated AI</span>
+        <button type="button" class="btn btn-quiet" id="reset-button">Reset demo</button>
+      </header>
+
+      <main>
+        <section id="view-overview" aria-labelledby="overview-heading">
+          <div class="hero">
+            <div class="hero-copy">
+              <p class="eyebrow">Interactive classroom demo</p>
+              <h1 id="overview-heading">See every<br>student’s thinking.</h1>
+              <p class="lede">A live lesson workspace to see who understands, spot misconceptions, and decide what to teach next.</p>
+              <div class="hero-actions">
+                <button type="button" class="btn btn-primary" id="start-demo">Start the 2-minute demo</button>
+                <button type="button" class="btn btn-secondary" data-view="deck">Explore the lesson</button>
+              </div>
+            </div>
+            <div class="hero-preview" aria-label="Sample learner responses">
+              <div class="preview-heading"><span class="preview-dot" aria-hidden="true"></span> A window into the classroom <span>Sample responses</span></div>
+              <article class="preview-card">
+                <header class="student-card-head">
+                  <span>Learner 01</span>
+                  <span class="badge badge-mint">Clear explanation</span>
+                </header>
+                <p class="student-answer">Some particles have enough energy to escape from the surface. The liquid becomes water vapour, even below boiling point.</p>
+              </article>
+              <article class="preview-card">
+                <header class="student-card-head">
+                  <span>Learner 02</span>
+                  <span class="badge badge-amber">Needs review</span>
+                </header>
+                <p class="student-answer">The water is used up by the air and stops being water. Nothing is left once the dish looks dry.</p>
+              </article>
+              <article class="preview-card waiting">
+                <header class="student-card-head">
+                  <span>Learner 03</span>
+                  <span class="badge">Waiting</span>
+                </header>
+                <p class="student-answer muted">Still writing…</p>
+              </article>
+            </div>
+          </div>
+
+          <ol class="steps">
+            <li>
+              <span class="step-num">1</span>
+              <h3>Build a lesson</h3>
+              <p>Write a few short questions and a model answer only the teacher sees.</p>
+            </li>
+            <li>
+              <span class="step-num">2</span>
+              <h3>See the thinking</h3>
+              <p>Bring the class’s responses together and notice the ideas that need attention.</p>
+            </li>
+            <li>
+              <span class="step-num">3</span>
+              <h3>Decide the next step</h3>
+              <p>Review the AI suggestion against your model answer. Your judgement comes first.</p>
+            </li>
+          </ol>
+
+          <section class="ready-panel" aria-labelledby="ready-heading">
+            <div>
+              <p class="eyebrow">Ready lesson</p>
+              <h2 id="ready-heading">Year 8 Science · Where does the water go?</h2>
+              <p>A short evaporation question is already loaded. The teacher approves or changes every suggested mark.</p>
+            </div>
+            <p class="no-signin">No sign-in · Fictional sample class</p>
+          </section>
+        </section>
+
+        <section id="view-deck" hidden aria-labelledby="deck-heading">
+          <header class="page-intro">
+            <div>
+              <p class="eyebrow">Lesson deck</p>
+              <h1 id="deck-heading">Shape the questions</h1>
+              <p>Shape a sequence of questions. Your model answer stays in the teacher view; edits last for this visit.</p>
+            </div>
+            <button type="button" class="btn btn-primary" id="add-card">Add a card</button>
+          </header>
+          <div class="deck-layout">
+            <div id="deck-list" aria-label="Lesson cards"></div>
+            <form id="card-form">
+              <div class="form-field">
+                <label for="card-title">Card title</label>
+                <input id="card-title" name="card-title" type="text" maxlength="120" autocomplete="off">
+              </div>
+              <div class="form-field">
+                <label for="card-prompt">Prompt</label>
+                <textarea id="card-prompt" name="card-prompt" maxlength="1000" rows="5"></textarea>
+              </div>
+              <div class="form-field">
+                <label for="card-model">Teacher-only model answer</label>
+                <textarea id="card-model" name="card-model" maxlength="1200" rows="5"></textarea>
+              </div>
+              <div class="form-actions">
+                <button type="submit" class="btn btn-primary" id="save-card">Save card</button>
+                <button type="button" class="btn btn-secondary" id="launch-card">Launch card</button>
+                <button type="button" class="btn btn-quiet" id="move-up">Move up</button>
+                <button type="button" class="btn btn-quiet" id="move-down">Move down</button>
+                <button type="button" class="btn btn-quiet" id="delete-card">Delete card</button>
+              </div>
+              <p id="deck-message" class="muted" aria-live="polite"></p>
+            </form>
+          </div>
+        </section>
+
+        <section id="view-grid" hidden aria-labelledby="grid-heading">
+          <header class="page-intro">
+            <div>
+              <p class="eyebrow">Live class</p>
+              <h1 id="grid-heading">Student Thinking Grid</h1>
+              <p>Open a response to review its suggested mark. You approve or change the feedback.</p>
+            </div>
+            <div class="toolbar">
+              <button type="button" class="btn btn-secondary" id="student-button">Try student view</button>
+              <button type="button" class="btn btn-primary" id="simulate-button">Simulate responses</button>
+            </div>
+          </header>
+
+          <div class="live-panel">
+            <div class="live-question">
+              <span class="badge badge-indigo">Demo class · Code DEMO</span>
+              <h2 id="live-question">Where does the water go?</h2>
+              <p id="live-type">Open explanation</p>
+            </div>
+            <div class="stats" aria-label="Class counts">
+              <article class="stat"><span class="stat-value" id="count-total">12</span><span class="stat-label">In class</span></article>
+              <article class="stat"><span class="stat-value" id="count-responses">10</span><span class="stat-label">Responses</span></article>
+              <article class="stat"><span class="stat-value" id="count-review">10</span><span class="stat-label">Needs review</span></article>
+              <article class="stat"><span class="stat-value" id="count-reviewed">0</span><span class="stat-label">Reviewed</span></article>
+            </div>
+          </div>
+
+          <div class="filter-row" role="group" aria-label="Filter responses">
+            <button type="button" class="btn btn-quiet" data-filter="all">All responses</button>
+            <button type="button" class="btn btn-quiet" data-filter="review">Needs review</button>
+            <button type="button" class="btn btn-quiet" data-filter="reviewed">Reviewed</button>
+            <button type="button" class="btn btn-quiet" data-filter="waiting">Waiting</button>
+          </div>
+          <div id="student-grid" aria-live="polite"></div>
+          <aside class="action-tip">
+            <p>Try it: open a response, review the prepared AI suggestion, then approve or adjust it.</p>
+          </aside>
+        </section>
+
+        <section id="view-projector" hidden aria-labelledby="projector-question">
+          <div class="projector-canvas">
+            <p class="projector-tag">Class question</p>
+            <h1 id="projector-question">Where does the water go?</h1>
+            <div id="projector-count">0 of 12</div>
+            <div id="projector-exemplar" hidden></div>
+            <p class="sim-label">Simulated classroom</p>
+            <button type="button" class="btn btn-secondary" data-view="grid">Back to teacher view</button>
+          </div>
+        </section>
+      </main>
+
+      <footer class="colophon">Designed and built by Dimitrios Stivaktas</footer>
+    </div>
+  </div>
+
+  <dialog id="demo-dialog" aria-labelledby="dialog-title">
+    <div id="dialog-content"></div>
+  </dialog>
+  <p id="toast" role="status" hidden></p>
+</body>
+</html>
